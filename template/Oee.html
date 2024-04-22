@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Oee.css' %}">
+</head>
+<body>
+<h1>Oee calculation</h1>
+<div>
+<form action="OEE_CALCULATION" method="post">
+    {% csrf_token %}
+Machine name
+    <select name="n1">
+         {% for i in b %}
+        <option value="{{ i.machine_name }}">
+{{ i.machine_name }}
+        </option>
+            {% endfor %}
+    </select><br><br>
+
+    <input type="submit" value="CALCULATE" id="enter">
+</form><br><br>
+       <a href="machineview"><button>MACHINE VIEW</button></a><br><br>
+<a href="production_view"><button>PRODUCT VIEW</button></a><br><br>
+    <a href="machine_get"><button>PRODUCT UPDATE</button></a><br><br>
+    <a href="machine_s" ><button>OEE calculate</button></a><br><br>
+    <a href="oee_informs" ><button>OEE Information</button></a>
+</div>
+
+</body>
+</html>

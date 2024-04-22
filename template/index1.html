@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index1.css' %}">
+</head>
+<body>
+<h1>Machine Page</h1>
+<div id="section">
+<form action="machine_update" method="post" >
+    {% csrf_token %}
+    <input type="text" placeholder="machine_name" id="machine_name" name="n1" required=""><br><br>
+    <input type="text" placeholder="Serial number" id="serialno" name="n2" required=""><br><br>
+    <input type="time"  id="time" step="1" name="n3" required=""><br><br>
+    <input type="submit" value="ENTER" ID="enter">
+</form><br><br>
+    <a href="machineview"><button>MACHINE VIEW</button></a><br><br>
+<a href="production_view"><button>PRODUCT VIEW</button></a><br><br>
+    <a href="machine_get"><button>PRODUCT UPDATE</button></a><br><br>
+    <a href="machine_s" ><button>OEE calculate</button></a><br><br>
+    <a href="oee_informs" ><button>OEE Information</button></a>
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>

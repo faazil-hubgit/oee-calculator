@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'product.css' %}">
+</head>
+<body>
+<h1>Product Page</h1>
+<div>
+  <form action="product_udt" method="post">
+    {% csrf_token %}
+    <input type="text" name="n1" id="cycle_no" required="" placeholder="CYCLE_NUMBER"><br><br>
+
+    <input type="text" name="n2" id="material_name" required="" placeholder="MATERIAL NAME"><br><br>
+Machine name
+    <select name="n5">
+  {% for i in b %}
+      <option value="{{ i.machine_name }}" > {{ i.machine_name }}
+
+      </option>
+     {% endfor %}
+
+    </select><br><br>
+    start time
+    <input type="time" name="n3" id="start_time"  required="" step="1"><br><br>
+      End time
+    <input type="time" name="n4" id="end_time" required="" step="1"><br><br>
+    <input type="submit" value="ENTER" id="enter"><br><br>
+
+
+
+  </form>
+        <a href="machineview"><button>MACHINE VIEW</button></a><br><br>
+<a href="production_view"><button>PRODUCT VIEW</button></a><br><br>
+    <a href="machine_get"><button>PRODUCT UPDATE</button></a><br><br>
+    <a href="machine_s" ><button>OEE calculate</button></a><br><br>
+     <a href="oee_informs" ><button>OEE Information</button></a>
+    </div>
+</div>
+
+</body>
+</html>
